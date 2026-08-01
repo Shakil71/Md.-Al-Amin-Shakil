@@ -27,6 +27,7 @@ export function Contact() {
       <Container>
         <div ref={ref}>
           <SectionHeading
+            index="07"
             eyebrow="Contact"
             title="Let's talk infrastructure."
             description="Open to junior/mid system engineering roles, on-call support work, and infrastructure projects. Reach out any time."

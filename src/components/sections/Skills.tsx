@@ -14,6 +14,7 @@ export function Skills() {
       <Container>
         <div ref={ref}>
           <SectionHeading
+            index="04"
             eyebrow="Skills"
             title="The toolkit behind the uptime."
             description="Depth across operating systems, storage, networking, virtualization, and security operations."

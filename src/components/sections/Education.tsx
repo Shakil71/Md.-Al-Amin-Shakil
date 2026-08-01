@@ -14,6 +14,7 @@ export function Education() {
       <Container>
         <div ref={ref}>
           <SectionHeading
+            index="05"
             eyebrow="Education & Certifications"
             title="Foundations and formal credentials."
           />

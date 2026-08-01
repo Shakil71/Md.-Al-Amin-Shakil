@@ -29,6 +29,7 @@ export function About() {
       <Container>
         <div ref={ref}>
           <SectionHeading
+            index="01"
             eyebrow="About"
             title="Reliable infrastructure, calm under pressure."
             description={profile.summary}

@@ -107,3 +107,62 @@ body {
   padding-top: clamp(4rem, 8vw, 7rem);
   padding-bottom: clamp(4rem, 8vw, 7rem);
 }
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.display-huge {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 0.92;
+}
+
+.section-index {
+  font-family: var(--font-mono), monospace;
+  font-size: clamp(3.5rem, 9vw, 7rem);
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--border);
+  user-select: none;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cursor-none {
+    cursor: none;
+  }
+  .cursor-none a,
+  .cursor-none button {
+    cursor: none;
+  }
+}
+
+.cursor-ring--active {
+  width: 3.25rem;
+  height: 3.25rem;
+  background: rgba(34, 211, 238, 0.12);
+  border-color: var(--accent-2);
+}

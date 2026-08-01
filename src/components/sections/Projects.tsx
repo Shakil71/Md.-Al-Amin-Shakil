@@ -15,6 +15,7 @@ export function Projects() {
       <Container>
         <div ref={ref}>
           <SectionHeading
+            index="03"
             eyebrow="Projects"
             title="Infrastructure I've designed and shipped."
             description="Selected initiatives spanning cloud virtualization and secure remote access delivery."

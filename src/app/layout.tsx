@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { profile } from "@/data/resume";
+import { CustomCursor } from "@/components/ui/CustomCursor";
 
 const bodyFont = Inter({
   variable: "--font-body",
@@ -48,6 +49,8 @@ export default function RootLayout({
       className={`${bodyFont.variable} ${displayFont.variable} ${monoFont.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-accent">
+        <div className="grain" aria-hidden="true" />
+        <CustomCursor />
         {children}
       </body>
     </html>

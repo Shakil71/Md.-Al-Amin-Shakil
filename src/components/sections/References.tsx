@@ -13,7 +13,11 @@ export function References() {
     <section id="references" className="section-pad relative">
       <Container>
         <div ref={ref}>
-          <SectionHeading eyebrow="References" title="People who've worked with me." />
+          <SectionHeading
+            index="06"
+            eyebrow="References"
+            title="People who've worked with me."
+          />
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {references.map((person) => (
