@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Float, Sparkles, Icosahedron, Points, PointMaterial } from "@react-three/drei";
+import { Float, Icosahedron, Points, PointMaterial } from "@react-three/drei";
 import * as THREE from "three";
 
 function createSpherePositions(count: number) {
@@ -26,8 +26,8 @@ function ParticleField() {
 
   useFrame((_, delta) => {
     if (pointsRef.current) {
-      pointsRef.current.rotation.y += delta * 0.02;
-      pointsRef.current.rotation.x += delta * 0.006;
+      pointsRef.current.rotation.y += delta * 0.015;
+      pointsRef.current.rotation.x += delta * 0.004;
     }
   });
 
@@ -35,11 +35,11 @@ function ParticleField() {
     <Points ref={pointsRef} positions={positions} stride={3} frustumCulled>
       <PointMaterial
         transparent
-        color="#7c5cff"
-        size={0.028}
+        color="#5c88ec"
+        size={0.022}
         sizeAttenuation
         depthWrite={false}
-        opacity={0.55}
+        opacity={0.4}
       />
     </Points>
   );
@@ -51,10 +51,10 @@ function CoreShape() {
 
   useFrame((_, delta) => {
     if (groupRef.current) {
-      groupRef.current.rotation.y += delta * 0.18;
-      groupRef.current.rotation.x += delta * 0.05;
-      groupRef.current.rotation.y += pointer.x * delta * 0.4;
-      groupRef.current.rotation.x += -pointer.y * delta * 0.2;
+      groupRef.current.rotation.y += delta * 0.12;
+      groupRef.current.rotation.x += delta * 0.03;
+      groupRef.current.rotation.y += pointer.x * delta * 0.25;
+      groupRef.current.rotation.x += -pointer.y * delta * 0.12;
     }
   });
 
@@ -62,23 +62,23 @@ function CoreShape() {
     <group ref={groupRef}>
       <Icosahedron args={[1.7, 1]}>
         <meshStandardMaterial
-          color="#0b0e17"
-          emissive="#7c5cff"
-          emissiveIntensity={0.35}
-          roughness={0.15}
-          metalness={0.6}
+          color="#0d121c"
+          emissive="#3468e0"
+          emissiveIntensity={0.3}
+          roughness={0.25}
+          metalness={0.5}
           wireframe
         />
       </Icosahedron>
       <Icosahedron args={[1.15, 0]}>
         <meshStandardMaterial
-          color="#22d3ee"
-          emissive="#22d3ee"
-          emissiveIntensity={0.6}
-          roughness={0.2}
-          metalness={0.4}
+          color="#5c88ec"
+          emissive="#5c88ec"
+          emissiveIntensity={0.4}
+          roughness={0.3}
+          metalness={0.3}
           transparent
-          opacity={0.16}
+          opacity={0.1}
         />
       </Icosahedron>
     </group>
@@ -92,16 +92,15 @@ export default function HeroScene() {
       camera={{ position: [0, 0, 6.2], fov: 45 }}
       gl={{ antialias: true, alpha: true }}
     >
-      <ambientLight intensity={0.5} />
-      <pointLight position={[5, 4, 5]} intensity={40} color="#7c5cff" />
-      <pointLight position={[-5, -3, -4]} intensity={25} color="#22d3ee" />
+      <ambientLight intensity={0.55} />
+      <pointLight position={[5, 4, 5]} intensity={30} color="#3468e0" />
+      <pointLight position={[-5, -3, -4]} intensity={18} color="#5c88ec" />
 
-      <Float speed={1.4} rotationIntensity={0.4} floatIntensity={1.1}>
+      <Float speed={1.1} rotationIntensity={0.3} floatIntensity={0.8}>
         <CoreShape />
       </Float>
 
       <ParticleField />
-      <Sparkles count={40} scale={7} size={2.2} speed={0.25} color="#ff5fae" opacity={0.5} />
     </Canvas>
   );
 }

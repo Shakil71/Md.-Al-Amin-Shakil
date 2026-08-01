@@ -11,7 +11,7 @@ const base =
 
 const variants = {
   primary:
-    "bg-gradient-to-r from-accent-2 via-accent to-accent-3 text-black shadow-[0_0_30px_-8px_rgba(124,92,255,0.8)] hover:brightness-110 hover:shadow-[0_0_40px_-6px_rgba(124,92,255,0.95)]",
+    "bg-gradient-to-r from-accent-2 to-accent text-white shadow-[0_0_24px_-10px_rgba(52,104,224,0.8)] hover:brightness-110 hover:shadow-[0_0_30px_-8px_rgba(52,104,224,0.9)]",
   ghost:
     "border border-border text-foreground/90 hover:border-accent-2/60 hover:text-accent-2",
 };

@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #05060a;
-  --foreground: #e9edf7;
-  --surface: #0b0e17;
-  --surface-2: #10141f;
+  --background: #080b12;
+  --foreground: #e7ebf3;
+  --surface: #0d121c;
+  --surface-2: #121826;
   --border: rgba(148, 163, 184, 0.14);
-  --accent: #7c5cff;
-  --accent-2: #22d3ee;
-  --accent-3: #ff5fae;
-  --muted: #8891a7;
+  --accent: #3468e0;
+  --accent-2: #5c88ec;
+  --accent-3: #7c8ba8;
+  --muted: #8892a5;
 }
 
 @theme inline {
@@ -53,20 +53,20 @@ body {
   background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(var(--accent), var(--accent-2));
+  background: var(--accent);
   border-radius: 999px;
   border: 2px solid var(--background);
 }
 
 .text-gradient {
-  background: linear-gradient(90deg, var(--accent-2), var(--accent) 55%, var(--accent-3));
+  background: linear-gradient(90deg, var(--accent-2), var(--accent));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 .glass {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015));
   border: 1px solid var(--border);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -82,7 +82,7 @@ body {
   inset: -1px;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(120deg, var(--accent-2), var(--accent), var(--accent-3));
+  background: linear-gradient(120deg, var(--accent-2), var(--accent));
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -108,61 +108,20 @@ body {
   padding-bottom: clamp(4rem, 8vw, 7rem);
 }
 
-.grain {
-  position: fixed;
-  inset: 0;
-  z-index: 60;
-  pointer-events: none;
-  opacity: 0.05;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
 .display-huge {
   font-family: var(--font-display), sans-serif;
   font-weight: 600;
   letter-spacing: -0.03em;
-  line-height: 0.92;
+  line-height: 0.96;
 }
 
 .section-index {
   font-family: var(--font-mono), monospace;
-  font-size: clamp(3.5rem, 9vw, 7rem);
+  font-size: clamp(3rem, 7vw, 5.5rem);
   font-weight: 700;
   line-height: 1;
   color: transparent;
   -webkit-text-stroke: 1px var(--border);
   user-select: none;
-}
-
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee 28s linear infinite;
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .cursor-none {
-    cursor: none;
-  }
-  .cursor-none a,
-  .cursor-none button {
-    cursor: none;
-  }
-}
-
-.cursor-ring--active {
-  width: 3.25rem;
-  height: 3.25rem;
-  background: rgba(34, 211, 238, 0.12);
-  border-color: var(--accent-2);
+  opacity: 0.7;
 }

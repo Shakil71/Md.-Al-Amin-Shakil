@@ -66,7 +66,7 @@ export function Experience() {
             <div className="space-y-10">
               {experience.map((job) => (
                 <article key={job.company} className="reveal relative">
-                  <span className="absolute -left-[2.55rem] top-1.5 h-3 w-3 rounded-full bg-gradient-to-br from-accent-2 to-accent shadow-[0_0_0_4px_var(--background),0_0_16px_2px_rgba(124,92,255,0.6)] sm:-left-[3.05rem]" />
+                  <span className="absolute -left-[2.55rem] top-1.5 h-3 w-3 rounded-full bg-gradient-to-br from-accent-2 to-accent shadow-[0_0_0_4px_var(--background),0_0_10px_1px_rgba(52,104,224,0.45)] sm:-left-[3.05rem]" />
 
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
                     <h3 className="font-display text-xl font-semibold text-foreground">

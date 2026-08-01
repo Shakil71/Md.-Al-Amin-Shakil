@@ -6,21 +6,11 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { Marquee } from "@/components/ui/Marquee";
 import { highlights, profile } from "@/data/resume";
 
 const HeroScene = dynamic(() => import("@/components/three/HeroScene"), {
   ssr: false,
 });
-
-const tickerItems = [
-  "Linux Administration",
-  "Oracle Enterprise Systems",
-  "Virtualization",
-  "Storage & Networking",
-  "Security Hardening",
-  "24x7 Support",
-];
 
 export function Hero() {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -59,12 +49,6 @@ export function Hero() {
           { autoAlpha: 0, y: 24, scale: 0.96 },
           { autoAlpha: 1, y: 0, scale: 1, duration: 0.9 },
           "-=1.1",
-        )
-        .fromTo(
-          ".hero-marquee",
-          { autoAlpha: 0, y: 16 },
-          { autoAlpha: 1, y: 0, duration: 0.6 },
-          "-=0.3",
         );
     }, rootRef);
 
@@ -77,17 +61,17 @@ export function Hero() {
     <section
       id="top"
       ref={rootRef}
-      className="relative flex min-h-screen flex-col overflow-hidden pt-28"
+      className="relative flex min-h-screen items-center overflow-hidden pt-28"
     >
       <div className="absolute inset-0 grid-fade" />
-      <div className="absolute -top-40 right-[-10%] h-[36rem] w-[36rem] rounded-full bg-accent/20 blur-[140px]" />
-      <div className="absolute bottom-[-10rem] left-[-10%] h-[30rem] w-[30rem] rounded-full bg-accent-2/15 blur-[140px]" />
+      <div className="absolute -top-40 right-[-10%] h-[36rem] w-[36rem] rounded-full bg-accent/10 blur-[160px]" />
+      <div className="absolute bottom-[-10rem] left-[-10%] h-[30rem] w-[30rem] rounded-full bg-accent-2/8 blur-[160px]" />
 
-      <div className="absolute inset-0 z-0 opacity-90">
+      <div className="absolute inset-0 z-0 opacity-60">
         <HeroScene />
       </div>
 
-      <Container className="relative z-10 flex flex-1 items-center">
+      <Container className="relative z-10">
         <div className="flex flex-col items-center gap-14 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-2xl">
             <p className="hero-eyebrow inline-flex items-center gap-2 rounded-full border border-border px-4 py-1.5 font-mono text-xs uppercase tracking-[0.3em] text-accent-2">
@@ -139,7 +123,7 @@ export function Hero() {
           </div>
 
           <div className="hero-photo relative flex-none">
-            <div className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-gradient-to-br from-accent-2/40 via-accent/30 to-accent-3/40 blur-3xl" />
+            <div className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-gradient-to-br from-accent-2/20 to-accent/15 blur-3xl" />
             <div className="glass relative w-64 overflow-hidden rounded-[2rem] p-2 sm:w-72">
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.5rem]">
                 <Image
@@ -156,10 +140,6 @@ export function Hero() {
           </div>
         </div>
       </Container>
-
-      <div className="hero-marquee relative z-10 mt-14">
-        <Marquee items={tickerItems} />
-      </div>
     </section>
   );
 }
