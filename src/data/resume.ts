@@ -11,7 +11,7 @@ export const profile = {
   linkedin: "https://linkedin.com/in/md-al-amin-shakil",
   linkedinLabel: "linkedin.com/in/md-al-amin-shakil",
   resumeFile: `${basePath}/Md_Al_Amin_Shakil_Resume.pdf`,
-  photo: `${basePath}/images/profile.jpg`,
+  photo: `${basePath}/images/profile.png`,
   summary:
     "Junior System Engineer with hands-on experience across Linux administration, Oracle enterprise systems, and virtualization. Skilled in monitoring and troubleshooting Exadata, SPARC/X-Series, and Private Cloud Appliance (PCA) environments for banking and telecom clients. Strong in OS deployment and upgrades, storage (LVM/RAID/Multipath), networking (bonding/VLAN/DNS), SSL/TLS, and security hardening. Known for reliable 24x7 support, log analysis, and structured incident handling.",
 };
