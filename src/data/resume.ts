@@ -51,6 +51,7 @@ export const experience: ExperienceEntry[] = [
     points: [
       "Supported hotel management software and databases; delivered client support, hardware/software setup, and network monitoring.",
       "Configured client environments and resolved user issues to improve system stability; produced operational reports.",
+      "Implemented network monitoring solutions, identifying and resolving potential connectivity issues before they impacted hotel operations.",
     ],
   },
   {
@@ -60,6 +61,7 @@ export const experience: ExperienceEntry[] = [
     points: [
       "Administered domain/server controls and DNS; executed scheduled server updates to improve uptime.",
       "Streamlined deployment and maintenance processes to enhance availability for enterprise applications.",
+      "Established robust server update schedules and DNS administration, significantly enhancing enterprise application availability.",
     ],
   },
 ];
@@ -75,7 +77,20 @@ export type ProjectEntry = {
 
 export const projects: ProjectEntry[] = [
   {
-    title: "Cloud Virtual Machine Setup",
+    title: "Oracle Database Appliance X11 High Availability",
+    org: "NRB Bank",
+    period: "Apr 2026 — Jun 2026",
+    summary:
+      "High-availability OS deployment and patching for an Oracle Database Appliance X11 cluster supporting mission-critical banking workloads.",
+    points: [
+      "OS install and configuration of Oracle Linux 8 on ODA X11 for the HA cluster.",
+      "Patch configuration of Oracle Exadata and ODA X11 to ensure system stability and security.",
+      "Network setup and HA configuration for Oracle RAC across both DC and DR sites.",
+    ],
+    tags: ["Oracle Linux 8", "ODA X11", "Oracle RAC", "HA/DR", "Exadata Patching"],
+  },
+  {
+    title: "Virtual Machine Setup",
     org: "Express System Limited",
     period: "Sep 2025 — Nov 2025",
     summary:
@@ -93,7 +108,7 @@ export const projects: ProjectEntry[] = [
   {
     title: "RDP Setup",
     org: "Inovi Solutions",
-    period: "Aug 2025 — Sep 2025",
+    period: "Jul 2025 — Oct 2025",
     summary:
       "Robust Remote Desktop Protocol setup enabling secure, high-performance remote access for distributed teams.",
     points: [
@@ -227,6 +242,20 @@ export const certifications: CertificationEntry[] = [
     name: "Ethical Hacker",
     issuer: "Team Matrix (Elite Hackers)",
     year: "2022",
+  },
+];
+
+export type ReferenceEntry = {
+  name: string;
+  role: string;
+  company: string;
+};
+
+export const references: ReferenceEntry[] = [
+  {
+    name: "Md. Tariquzzaman",
+    role: "Manager",
+    company: "Express System Limited",
   },
 ];
 
