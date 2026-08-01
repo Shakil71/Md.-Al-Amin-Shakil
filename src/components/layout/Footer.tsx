@@ -6,7 +6,7 @@ export function Footer() {
     <footer className="border-t border-border py-8">
       <Container className="flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
         <p className="font-mono text-xs text-muted">
-          © {new Date().getFullYear()} {profile.name}. Built with Next.js, Three.js & GSAP.
+          © {new Date().getFullYear()} {profile.name}.
         </p>
         <a
           href="#top"
