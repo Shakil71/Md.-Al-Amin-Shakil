@@ -106,6 +106,11 @@ export function Hero() {
                   Download Resume
                 </Button>
               </span>
+              <span className="hero-cta">
+                <Button href={profile.coverLetterFile} variant="ghost" download>
+                  Download Cover Letter
+                </Button>
+              </span>
             </div>
 
             <dl className="mt-16 grid grid-cols-2 gap-6 border-t border-border pt-8 sm:grid-cols-4">
