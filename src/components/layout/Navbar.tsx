@@ -16,6 +16,22 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Lock background scroll and allow Escape to close while the mobile menu is open.
+  useEffect(() => {
+    if (!open) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    document.addEventListener("keydown", onKey);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
@@ -87,23 +103,37 @@ export function Navbar() {
       </nav>
 
       {open ? (
-        <div className="glass border-t border-border px-6 pb-6 pt-2 md:hidden">
-          <div className="flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="text-sm text-muted transition-colors hover:text-accent-2"
-              >
-                {link.label}
-              </a>
-            ))}
-            <Button href="#contact" variant="primary" className="mt-2 w-full text-sm" onClick={() => setOpen(false)}>
+        <>
+          {/* Dimmed backdrop behind the panel; click to close. */}
+          <div
+            className="fixed inset-0 -z-10 bg-background/70 backdrop-blur-sm md:hidden"
+            onClick={() => setOpen(false)}
+            aria-hidden="true"
+          />
+
+          <div className="border-t border-border bg-background px-6 pb-6 pt-4 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.65)] md:hidden">
+            <div className="flex flex-col divide-y divide-border">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="py-3.5 text-base font-medium text-foreground/90 transition-colors hover:text-accent-2"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+            <Button
+              href="#contact"
+              variant="primary"
+              className="mt-5 w-full text-sm"
+              onClick={() => setOpen(false)}
+            >
               Let&apos;s talk
             </Button>
           </div>
-        </div>
+        </>
       ) : null}
     </header>
   );
