@@ -44,7 +44,19 @@ export function Education() {
                   <li key={item.name} className="border-l-2 border-accent-3/40 pl-4">
                     <p className="font-medium text-foreground">{item.name}</p>
                     <p className="mt-1 text-sm text-muted">{item.issuer}</p>
-                    <p className="mt-1 font-mono text-xs text-accent-3">{item.year}</p>
+                    <div className="mt-1 flex items-center gap-3">
+                      <p className="font-mono text-xs text-accent-3">{item.year}</p>
+                      {item.credentialUrl && (
+                        <a
+                          href={item.credentialUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs font-medium text-accent-2 underline-offset-4 hover:underline"
+                        >
+                          View credential ↗
+                        </a>
+                      )}
+                    </div>
                   </li>
                 ))}
               </ul>

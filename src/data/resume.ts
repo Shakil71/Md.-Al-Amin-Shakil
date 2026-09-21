@@ -20,7 +20,7 @@ export const highlights = [
   { label: "Years in enterprise IT", value: "2+" },
   { label: "On-call support", value: "24x7" },
   { label: "Client sectors", value: "Banking & Telecom" },
-  { label: "Certifications", value: "3" },
+  { label: "Certifications", value: "4" },
 ];
 
 export type ExperienceEntry = {
@@ -225,9 +225,17 @@ export type CertificationEntry = {
   name: string;
   issuer: string;
   year: string;
+  credentialUrl?: string;
 };
 
 export const certifications: CertificationEntry[] = [
+  {
+    name: "Red Hat Certified System Administrator (RHCSA)",
+    issuer: "Red Hat",
+    year: "2026",
+    credentialUrl:
+      "https://www.credly.com/badges/cefe2ce0-b6b8-425a-816a-f2c9d93c5301",
+  },
   {
     name: "Oracle Cloud Infrastructure Certified Foundations Associate",
     issuer: "Oracle",
