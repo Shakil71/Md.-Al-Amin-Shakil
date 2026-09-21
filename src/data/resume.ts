@@ -20,7 +20,7 @@ export const highlights = [
   { label: "Years in enterprise IT", value: "2+" },
   { label: "On-call support", value: "24x7" },
   { label: "Client sectors", value: "Banking & Telecom" },
-  { label: "Certifications", value: "4" },
+  { label: "Certifications", value: "8" },
 ];
 
 export type ExperienceEntry = {
@@ -225,31 +225,78 @@ export type CertificationEntry = {
   name: string;
   issuer: string;
   year: string;
+  credentialId?: string;
   credentialUrl?: string;
+  /** Preview image shown on the site (JPG rendered from the source certificate). */
+  thumbnail: string;
+  /** Original certificate file (PDF or full-resolution image) for viewing/downloading. */
+  fileUrl: string;
 };
 
 export const certifications: CertificationEntry[] = [
   {
     name: "Red Hat Certified System Administrator (RHCSA)",
     issuer: "Red Hat",
-    year: "2026",
+    year: "Sep 2026",
+    credentialId: "260-114-632",
     credentialUrl:
       "https://www.credly.com/badges/cefe2ce0-b6b8-425a-816a-f2c9d93c5301",
+    thumbnail: `${basePath}/certificates/rhcsa.jpg`,
+    fileUrl: `${basePath}/certificates/rhcsa.pdf`,
   },
   {
-    name: "Oracle Cloud Infrastructure Certified Foundations Associate",
-    issuer: "Oracle",
-    year: "2025",
+    name: "Certified Cybersecurity Educator Professional (CCEP)",
+    issuer: "Red Team Leaders",
+    year: "Dec 2025",
+    credentialUrl:
+      "https://courses.redteamleaders.com/exam-completion/0a9de68ed2d51b46",
+    thumbnail: `${basePath}/certificates/ccep.jpg`,
+    fileUrl: `${basePath}/certificates/ccep.pdf`,
+  },
+  {
+    name: "Oracle Cloud Infrastructure 2025 Certified Foundations Associate",
+    issuer: "Oracle University",
+    year: "Aug 2025",
+    credentialId: "101862287OCI25FNDCFA",
+    thumbnail: `${basePath}/certificates/oci-foundations.jpg`,
+    fileUrl: `${basePath}/certificates/oci-foundations.pdf`,
   },
   {
     name: "MySQL Implementation Certified Associate",
-    issuer: "Oracle",
-    year: "2025",
+    issuer: "Oracle University",
+    year: "Jun 2025",
+    credentialId: "101862287MYSQLIMPOCA",
+    thumbnail: `${basePath}/certificates/mysql-associate.jpg`,
+    fileUrl: `${basePath}/certificates/mysql-associate.pdf`,
   },
   {
-    name: "Ethical Hacker",
-    issuer: "Team Matrix (Elite Hackers)",
-    year: "2022",
+    name: "Certificate of Appreciation — Paper Presentation, ICBIM 2023",
+    issuer: "Daffodil International University",
+    year: "Sep 2023",
+    thumbnail: `${basePath}/certificates/bim-2023-paper.jpg`,
+    fileUrl: `${basePath}/certificates/bim-2023-paper.jpg`,
+  },
+  {
+    name: "Blockchain for Network Engineers Course",
+    issuer: "Orhan Ergun",
+    year: "Aug 2022",
+    thumbnail: `${basePath}/certificates/blockchain-network.jpg`,
+    fileUrl: `${basePath}/certificates/blockchain-network.jpg`,
+  },
+  {
+    name: "Backend Engineering with Python",
+    issuer: "Tecognize Training",
+    year: "Apr 2022",
+    thumbnail: `${basePath}/certificates/python-backend.jpg`,
+    fileUrl: `${basePath}/certificates/python-backend.pdf`,
+  },
+  {
+    name: "Certified Ethical Hacker (CEH)",
+    issuer: "Team Matrix — Elite Hackers",
+    year: "Feb 2022",
+    credentialId: "CEHE0120R",
+    thumbnail: `${basePath}/certificates/ceh.jpg`,
+    fileUrl: `${basePath}/certificates/ceh.jpg`,
   },
 ];
 
@@ -273,5 +320,6 @@ export const navLinks = [
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
   { label: "Education", href: "#education" },
+  { label: "Certifications", href: "#certifications" },
   { label: "Contact", href: "#contact" },
 ];

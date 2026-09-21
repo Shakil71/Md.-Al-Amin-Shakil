@@ -4,7 +4,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GlassCard } from "@/components/ui/GlassCard";
-import { certifications, education } from "@/data/resume";
+import { education } from "@/data/resume";
 
 export function Education() {
   const ref = useScrollReveal<HTMLDivElement>();
@@ -15,11 +15,11 @@ export function Education() {
         <div ref={ref}>
           <SectionHeading
             index="05"
-            eyebrow="Education & Certifications"
-            title="Foundations and formal credentials."
+            eyebrow="Education"
+            title="Academic foundations."
           />
 
-          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+          <div className="mt-12 max-w-2xl">
             <GlassCard className="reveal">
               <h3 className="font-display text-lg font-semibold text-foreground">
                 Education
@@ -30,33 +30,6 @@ export function Education() {
                     <p className="font-medium text-foreground">{item.degree}</p>
                     <p className="mt-1 text-sm text-muted">{item.school}</p>
                     <p className="mt-1 font-mono text-xs text-accent-2">{item.period}</p>
-                  </li>
-                ))}
-              </ul>
-            </GlassCard>
-
-            <GlassCard className="reveal">
-              <h3 className="font-display text-lg font-semibold text-foreground">
-                Certifications
-              </h3>
-              <ul className="mt-5 space-y-5">
-                {certifications.map((item) => (
-                  <li key={item.name} className="border-l-2 border-accent-3/40 pl-4">
-                    <p className="font-medium text-foreground">{item.name}</p>
-                    <p className="mt-1 text-sm text-muted">{item.issuer}</p>
-                    <div className="mt-1 flex items-center gap-3">
-                      <p className="font-mono text-xs text-accent-3">{item.year}</p>
-                      {item.credentialUrl && (
-                        <a
-                          href={item.credentialUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-xs font-medium text-accent-2 underline-offset-4 hover:underline"
-                        >
-                          View credential ↗
-                        </a>
-                      )}
-                    </div>
                   </li>
                 ))}
               </ul>

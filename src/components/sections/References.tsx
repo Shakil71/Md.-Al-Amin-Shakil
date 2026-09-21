@@ -14,7 +14,7 @@ export function References() {
       <Container>
         <div ref={ref}>
           <SectionHeading
-            index="06"
+            index="07"
             eyebrow="References"
             title="People who've worked with me."
           />
