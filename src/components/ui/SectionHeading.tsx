@@ -84,13 +84,19 @@ export function SectionHeading({
 
       <h2
         ref={titleRef}
-        className="display-huge mt-4 max-w-2xl text-3xl text-foreground sm:text-5xl"
+        className={`display-huge mt-4 max-w-2xl text-3xl text-foreground sm:text-5xl ${
+          align === "center" ? "mx-auto" : ""
+        }`}
       >
         {title}
       </h2>
 
       {description ? (
-        <p className="sh-description mt-5 max-w-xl text-base leading-relaxed text-muted">
+        <p
+          className={`sh-description mt-5 max-w-xl text-base leading-relaxed text-muted ${
+            align === "center" ? "mx-auto" : ""
+          }`}
+        >
           {description}
         </p>
       ) : null}
